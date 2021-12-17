@@ -1,0 +1,19 @@
+{
+    "name": "Diego/miniframework",
+    "description": "Teste de instalação do composer",
+    "require": {
+        "php": ">= 7.0"
+    },
+    "authors": [
+        {
+            "name": "Diego Alencar Jacober",
+            "email": "diegoalencar.jacober@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "MF\\": "vendor/MF/"
+        }
+    }
+}
