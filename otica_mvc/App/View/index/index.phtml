@@ -15,17 +15,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <style>
       body{
-        background-color:ivory;
+        background-color:#808e9b;
       }
       .card-login {
       
-        
-        box-shadow: 2px 2px 15px royalblue;
+        border: 2px solid #3c40c6;
+    
         padding: 30px 0 0 0;
         width: 350px;
         margin: 0 auto;
         margin-top: 25px;
       }
+      .login{
+          background-color: #d2dae2;
+      }
+
     </style>
   </head>
 
@@ -39,15 +43,15 @@
     </nav>
 
     <div class="container">    
-      <div class="row">
+      <div class="row ">
 
-        <div class="card-login">
-          <div class="card">
-            <div class="card-header">
-              Login
+        <div class="card-login login">
+          <div class="card ">
+            <div class="card-header" style="text-align: center;">
+              <h4>Login</h4>
             </div>
-            <div class="card-body">
-              <form action="valida_login.php" method="post">
+            <div class="card-body login">
+              <form action="/autenticar" method="post">
                 <div class="form-group">
                   <input name="email" type="email" class="form-control" placeholder="E-mail">
                 </div>

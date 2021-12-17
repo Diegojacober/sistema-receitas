@@ -1,0 +1,339 @@
+<?php 
+
+
+$id = '1';
+
+?>
+
+<html lang="pt-br">
+
+  <head>
+
+ 
+
+    <meta charset="utf-8" />
+
+    <title>Receitas Ipanema </title>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <script>
+    function remover(id) {
+    location.href = 'paciente_controller.php?acao=remover&id='+id;
+    }
+
+    function atualizar(id) {
+    location.href = 'paciente_controller.php?acao=recuperarum&id='+id;
+    }
+
+    function visualizar(id) {
+    window.open (`paciente_controller.php?acao=ver&id=${id}`,'_blank')
+    }
+
+    function pesquisar()
+    {
+      let nome = document.getElementById('pesquisa').value
+      location.href = 'paciente_controller.php?acao=pesquisarM&nome='+nome;
+    }
+
+    function pesquisarCa()
+    {
+      let nome = document.getElementById('pesquisa').value
+      location.href = 'pesquisarcapivari?nome='+nome;
+    }
+
+    function pesquisarTD()
+    {
+      let nome = document.getElementById('pesquisa').value
+      location.href = 'paciente_controller.php?acao=pesquisar&nome='+nome;
+    }
+
+  </script>
+
+    <style>
+
+      .um:hover{
+
+        background-color: #D3D3D3;
+
+      }
+
+.card-header{
+
+  color: green;
+
+  font-size:26px ;
+
+  text-align: center;
+
+}
+
+
+
+      .card{
+
+        background-color:#B0C4DE;
+
+       
+
+        
+
+
+
+      }
+
+
+
+      .card-consultar-chamado {
+
+        padding: 30px 0 0 0;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+        margin-bottom: 22px;
+
+      }
+
+    </style>
+
+  </head>
+
+
+
+  <body>
+
+
+
+  <nav class="navbar navbar-dark bg-dark">
+
+      <a class="navbar-brand" href="#">
+
+      <i class="fas fa-glasses "></i>
+
+        Ótica Ipanema
+
+      </a>
+
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+
+          <a href="/sair" class="nav-link">
+
+          SAIR
+
+          </a>
+
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+
+    <div class="container">    
+
+      <div class="row">
+
+     
+
+    <?php if($id == 'usuario1' ){ ?>
+ 
+      <div class="mt-5">
+      <div class="input-group mb-2">
+       
+        <input type="text" name="nomeP" id="pesquisa" class="form-control" placeholder="Nome">
+        <div class="input-group-append">
+          <div class="input-group-text"><a target="_blank" onclick="pesquisarCa()"><i class="fas fa-search fa-lg"></i></a></div>
+        </div>
+      </div>
+    </div>
+											<?php } ?>
+
+                      <?php if($id == 1 ){ ?>
+ 
+ <div class="mt-5">
+ <div class="input-group mb-2">
+  
+   <input type="text" name="nomeP" id="pesquisa" class="form-control" placeholder="Nome">
+   <div class="input-group-append">
+     <div class="input-group-text"><a target="_blank" onclick="pesquisarTD()"><i class="fas fa-search fa-lg"></i></a></div>
+   </div>
+ </div>
+</div>
+                 <?php } ?>
+
+        <div class="card-consultar-chamado">
+
+          <div class="card">
+
+            <div class="card-header">
+
+              <p>Clientes</p>
+
+              
+
+            </div>
+
+            
+
+            <div class="card-body">
+
+              
+
+            <?php foreach($this->view->pacientes as $dados_ind => $paciente){
+
+              ?>
+
+        
+
+
+
+              <div class="card mb-5 bg-light">
+
+                <div class="card-body um">
+
+              <!-- <h4 style="color: red;" class="card-title"><?php echo $paciente->nome; ?></h4> --->
+
+                  <h5 style="color: black;" class="card-title"><?php echo  $paciente->nome  .', '.$paciente->idade .' Anos' ; ?></h5>
+
+                  <h6 style="color: black;" class="card-title"><?php echo $paciente->data; ?></h6>
+
+
+
+
+
+                 
+
+                  <div class="table-responsive table-bordered">
+
+          <table class="table">
+
+            <thead class="thead-dark">
+
+        <tr>
+
+        <th>OLHO</th>
+
+        <th>ESFÉRICO</th>
+
+        <th>CILINDRICO</th>
+
+        <th>EIXO</th>
+
+        </tr>
+
+        </thead>
+
+      <tbody>
+
+        <tr>
+
+            <td style="color: red;">0D</td>
+
+            <td> <?php echo $paciente->olho_direito_esferico; ?></td>
+
+            <td> <?php echo $paciente->olho_direito_cilindrico; ?></td>
+
+            <td>  <?php echo $paciente->olho_direito_eixo; ?></td>
+
+        </tr>
+
+
+
+        <tr>
+
+            <td style="color: red;">OE</td>
+
+            <td> <?php echo $paciente->olho_esquerdo_esferico; ?></td>
+
+            <td>  <?php echo $paciente->olho_esquerdo_cilindrico; ?></td>
+
+            <td>  <?php echo $paciente->olho_esquerdo_eixo; ?></td>
+
+        </tr>
+
+        </tbody>
+
+
+
+    </table>
+
+                    </div>    
+
+                
+
+                
+
+                </h6>
+
+                  <p style="color: green;font-size:large " class="card-text">Adição: <?php echo $paciente->adicao; ?></p>
+
+
+
+                  <p style="color: blue;font-size:large " class="card-text">Descrição: <?php echo $paciente->descricao; ?></p>
+
+
+                  <?php if($_GET['id'] == 1){ ?>
+                    <div style="border:2px double blue" class="mt-3 p-3 ">
+										<i style="margin-left: 400px;" class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?= $paciente->id ?>)"></i>
+											<i style="margin-left: 50px;" class="fas fa-edit fa-lg text-info" onclick="atualizar(<?= $paciente->id ?>)"></i>
+                      <i style="margin-left: 50px;" class=" fas fa-print fa-lg"  onclick="visualizar(<?= $paciente->id ?>)"></i>
+                    </div>
+											<?php } ?>
+
+                      <?php if($_GET['id'] == 'usuario'){ ?>
+                    <div style="border:2px double blue" class="mt-3 p-3 ">
+                      <i style="margin-left: 50px;" class=" fas fa-print fa-lg"  onclick="visualizar(<?= $paciente->id ?>)"></i>
+                    </div>
+											<?php } ?>
+
+                </div>
+
+              </div>
+
+              <?php } ?>
+
+
+
+              <div class="row mt-5">
+
+                <div class="col-6">
+
+                  <a href="/homec" class="btn btn-lg btn-warning btn-block">Voltar</a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      
+
+    </div>
+
+  </body>
+
+</html>
