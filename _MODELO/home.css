@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: rgb(146, 146, 146);
+}
+.card-home{
+    margin-top: 50px;   
+}
+.card{
+    width:95%;
+    margin: auto;
+    border: 3px solid black;
+}
+.card-header{
+    text-align: center;
+    text-transform: uppercase;
+}
+.card-header,.card-body{
+    background-color: rgb(182, 182, 182);
+}
+.itens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: rgb(182, 182, 182);
+}
+.item{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.item a{
+    color: black;
+    text-decoration: none;
+}
+.item a:hover{
+    text-decoration: none;
+}
+
+@media(max-width:370px) {
+
+}

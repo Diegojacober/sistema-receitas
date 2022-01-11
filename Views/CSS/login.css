@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.753);
+}
+.card-login{
+    margin:50px auto;
+    padding: 20px;
+    width: 350px;
+    height: 150px;
+    
+}
+.card-body{
+    border-top: none;
+    border: 1px solid black;
+    background-color: #ccc;
+}
+.card-header{
+    border: 1px solid black;
+    border-bottom: none;
+    text-align: center;
+    line-height: bold;
+    font-size: 25px;
+    background-color: #ccc;
+}
+input{
+    border: 1px solid #ccc;
+}
+.icon{
+    width: 25px;
+    height: 25px;
+    background: url('./opto.png');
+}
+.flash{
+    margin:8px 0px;
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.836);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+}
